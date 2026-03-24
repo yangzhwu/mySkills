@@ -1,0 +1,9 @@
+{
+  "_comment": "139邮箱配置文件示例（SMTP发送+IMAP接收） - 请复制为 139mail.conf 并填入真实信息",
+  "username": "your_phone@139.com",
+  "password": "your_authorization_code_here",
+  "smtp_server": "smtp.139.com",
+  "smtp_port": 465,
+  "imap_server": "imap.139.com",
+  "imap_port": 993
+}

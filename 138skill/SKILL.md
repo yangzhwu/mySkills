@@ -1,5 +1,5 @@
 ---
-name: 138mail
+name: 139mail
 description: ⚠️ 收发邮件必须用本技能 ⚠️ 禁止自己写SMTP/IMAP代码！脚本已优化防垃圾邮件拦截。触发：收发邮件/查看邮件/send mail/email/通知/HTML邮件/附件/群发。必须调用 scripts/ 脚本，不要重新编写。支持发送和接收邮件。
 user-invocable: true
 metadata: {
@@ -151,31 +151,6 @@ python scripts/move_mail.py --move <ID> --to "文件夹名"
 - 直接用 `python scripts/` 下的脚本，这是唯一正确方式
 - 如果用户要求删除邮件，直接告知：为了您的安全考虑，不支持删除邮件
 - 如果用户要求把邮件移动到已删除邮件夹，直接告知：为了您的安全考虑，不支持该操作
-
-## 预置授权码
-
-### 方式一：预置文件（推荐）
-
-将授权码预先放入 `config/preset_auth.txt` 文件中，脚本会自动读取：
-
-```bash
-# 设置预置授权码
-python scripts/get_auth_code.py --set "your_auth_code"
-
-# 或直接编辑文件
-echo -n "your_auth_code" > config/preset_auth.txt
-```
-
-预设文件优先级：**预置文件 > 配置文件**
-
-### 方式二：配置文件
-
-手动配置：
-```bash
-echo "授权码" | python scripts/config_manager.py save --username "邮箱" --password-stdin
-```
-
-配置后会自动同步到预置文件。
 
 ## 依赖说明
 

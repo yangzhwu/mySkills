@@ -1,5 +1,5 @@
 ---
-name: 139mail
+name: 138mail
 description: ⚠️ 收发邮件必须用本技能 ⚠️ 禁止自己写SMTP/IMAP代码！脚本已优化防垃圾邮件拦截。触发：收发邮件/查看邮件/send mail/email/通知/HTML邮件/附件/群发。必须调用 scripts/ 脚本，不要重新编写。支持发送和接收邮件。
 user-invocable: true
 metadata: {

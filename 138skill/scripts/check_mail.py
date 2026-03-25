@@ -52,7 +52,7 @@ def check_mail(unread_only=False, limit=20, date_str=None):
     config = load_config()
     if not config:
         print("错误：未配置139邮箱账号")
-        print("请先运行: python scripts/config_manager.py save --username <账号> --password-stdin")
+        print("请先运行: python scripts/config_manager.py save --username 你的139邮箱")
         return 1
     
     try:
@@ -116,9 +116,7 @@ def check_mail(unread_only=False, limit=20, date_str=None):
         print(f"登录失败: {e}")
         print("\n可能原因：")
         print("  1. 账号格式错误，应为: 136xxxxxxxxx@139.com")
-        print("  2. 使用了登录密码而非授权码")
-        print("  3. 授权码已过期，请重新获取")
-        print("  4. 未在网页版开启IMAP服务")
+        print("  2. 未在网页版开启IMAP服务")
         return 1
     except ValueError:
         print("错误：--date 格式必须为 YYYY-MM-DD，例如 2026-03-12")

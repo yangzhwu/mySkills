@@ -168,7 +168,7 @@ def main():
         
     except imapclient.exceptions.LoginError as e:
         print(f"登录失败: {e}")
-        print("请检查账号和授权码是否正确")
+        print("请检查账号是否正确")
         return 1
     except ssl.SSLError as e:
         print(f"SSL连接错误: {e}")

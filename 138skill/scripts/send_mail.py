@@ -89,11 +89,10 @@ def print_missing_config_help():
     print("")
     print("如果你是 agent，不要再次盲查配置文件，直接引导用户提供以下信息：")
     print("1. 完整139邮箱地址，例如 13800138000@139.com")
-    print("2. SMTP 授权码（不是登录密码）")
-    print("3. 如未开启 SMTP 服务，先登录 https://mail.10086.cn/ 开启")
+    print("2. 如未开启 SMTP 服务，先登录 https://mail.10086.cn/ 开启")
     print("")
     print("保存配置命令：")
-    print('echo "授权码" | python scripts/config_manager.py save --username "你的139邮箱" --password-stdin')
+    print('python scripts/config_manager.py save --username "你的139邮箱"')
     print("")
     print("保存完成后，重新执行当前 send_mail 命令即可。")
 
@@ -177,8 +176,7 @@ def send_mail(to_addr, subject, body, html=False, attachments=None):
             return 0
             
     except smtplib.SMTPAuthenticationError:
-        print("登录失败：请检查账号和授权码")
-        print("提示：139邮箱需要使用授权码而非登录密码")
+        print("登录失败：请检查账号和token信息是否有效")
         return 1
     except FileNotFoundError as e:
         print(f"发送失败: {e}")
@@ -189,7 +187,7 @@ def send_mail(to_addr, subject, body, html=False, attachments=None):
     except ssl.SSLError as e:
         print(f"SSL连接错误: {e}")
         print("当前脚本已默认使用 139 邮箱兼容模式。")
-        print("请检查是否已开启 SMTP 服务，以及授权码是否正确。")
+        print("请检查是否已开启 SMTP 服务。")
         return 1
     except Exception as e:
         print(f"发送失败: {e}")

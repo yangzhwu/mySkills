@@ -91,13 +91,12 @@ python scripts/check_mail.py --limit 10
 2. 右上角账号管理 → 个人账号管理 → 获取授权码/协议设置
 3. 开启 SMTP/IMAP 服务
 4. 提供完整邮箱（如 13800138000@139.com）
-5. 提供授权码（不是登录密码）
 ```
 
 收到后执行：
 
 ```bash
-echo "授权码" | python scripts/config_manager.py save --username "邮箱" --password-stdin
+python scripts/config_manager.py save --username "邮箱"
 ```
 
 然后重试命令。
